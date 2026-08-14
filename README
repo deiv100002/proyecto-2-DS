@@ -1,0 +1,161 @@
+# Travel Explorer
+
+Aplicación móvil desarrollada con **React Native**, **Expo** y **TypeScript** para el Laboratorio 1 del curso **Programación para Dispositivos Móviles (TPA-4001)**.
+
+## Descripción
+
+Travel Explorer es una aplicación móvil de exploración de destinos diseñada para demostrar una estructura de navegación anidada utilizando **React Navigation**.
+
+El laboratorio requiere combinar múltiples tipos de navegación dentro de una sola aplicación:
+
+* **Drawer Navigator** como navegación principal.
+* **Bottom Tab Navigator** dentro de una de las pantallas del Drawer.
+* **Stack Navigator** dentro de uno de los Tabs para navegar hacia una pantalla de detalle.
+
+## Funcionalidades
+
+* Menú lateral mediante Drawer Navigator.
+* Navegación inferior mediante Bottom Tabs.
+* Navegación Stack entre lista de destinos y detalle.
+* Lista de destinos utilizando `FlatList`.
+* Navegación con parámetros entre pantallas.
+* Pantalla de detalle para cada destino.
+* Pantalla de favoritos con empty state.
+* Pantalla de perfil.
+* Pantalla About.
+* Íconos mediante Expo Vector Icons.
+* Tema de colores centralizado.
+* Diseño adaptable utilizando Flexbox y componentes de React Native.
+
+## Arquitectura de Navegación
+
+```text
+NavigationContainer
+│
+└── Drawer Navigator
+    │
+    ├── Home
+    │
+    ├── Explore
+    │   │
+    │   └── Bottom Tab Navigator
+    │       │
+    │       ├── Explore
+    │       │   │
+    │       │   └── Stack Navigator
+    │       │       ├── Destinations
+    │       │       └── Destination Detail
+    │       │
+    │       ├── Favorites
+    │       └── Profile
+    │
+    └── About
+```
+
+## Estructura del Proyecto
+
+```text
+laboratorio-1-DS/
+│
+├── src/
+│   ├── components/
+│   │
+│   ├── data/
+│   │   └── destinations.ts
+│   │
+│   ├── navigation/
+│   │   ├── DestinationStackNavigator.tsx
+│   │   ├── DrawerNavigator.tsx
+│   │   └── TabNavigator.tsx
+│   │
+│   ├── screens/
+│   │   ├── AboutScreen.tsx
+│   │   ├── DestinationDetailScreen.tsx
+│   │   ├── DestinationsScreen.tsx
+│   │   ├── FavoritesScreen.tsx
+│   │   ├── HomeScreen.tsx
+│   │   └── ProfileScreen.tsx
+│   │
+│   ├── theme/
+│   │   └── colors.ts
+│   │
+│   └── types/
+│
+├── App.tsx
+├── package.json
+├── tsconfig.json
+└── README.md
+```
+
+La separación entre archivos de navegación y pantallas responde al requerimiento de mantener una estructura organizada del proyecto.
+
+## Tecnologías Utilizadas
+
+* React Native
+* Expo
+* TypeScript
+* React Navigation
+* Native Stack Navigator
+* Bottom Tab Navigator
+* Drawer Navigator
+* Expo Vector Icons
+
+## Instalación
+
+Clonar o descomprimir el proyecto y entrar a la carpeta principal:
+
+```bash
+cd laboratorio-1-DS
+```
+
+Instalar las dependencias:
+
+```bash
+npm install
+```
+
+Iniciar Expo:
+
+```bash
+npx expo start
+```
+
+Si existen problemas de conexión con Expo Go:
+
+```bash
+npx expo start --tunnel
+```
+
+Luego escanear el código QR utilizando **Expo Go**.
+
+## Flujo de Prueba
+
+Para validar la navegación:
+
+```text
+Home
+→ Start Exploring
+→ Explore
+→ Seleccionar destino
+→ Destination Detail
+→ Back
+→ Favorites
+→ Profile
+→ Drawer
+→ About
+→ Home
+```
+
+El objetivo principal es que todas las transiciones funcionen correctamente sin cierres inesperados.
+
+## Autor
+
+Deiver Sánchez
+
+## Curso
+
+Programación para Dispositivos Móviles — TPA-4001
+
+## Laboratorio
+
+Laboratorio 1: Estructuras de Navegación Complejas
