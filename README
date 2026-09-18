@@ -1,6 +1,8 @@
 # Travel Explorer
 
-Aplicación móvil desarrollada con **React Native**, **Expo** y **TypeScript** para el Laboratorio 1 del curso **Programación para Dispositivos Móviles (TPA-4001)**.
+Aplicación móvil desarrollada con **React Native**, **Expo** y **TypeScript** 
+
+Travel Explorer consumes real-time weather information from the Xweather REST API. Users can search by country, city, and state/province when required, and select a forecast date up to 15 days in advance. The application includes input validation, loading states, API error handling, and a separated service layer for REST requests.
 
 ## Descripción
 
