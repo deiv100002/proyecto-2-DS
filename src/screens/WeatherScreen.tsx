@@ -269,7 +269,7 @@ const stateLabel =
       }
       value={state}
       onChangeText={setState}
-      autoCapitalize="characters"
+      
     />
   </>
 )}
@@ -297,6 +297,26 @@ const stateLabel =
   You can select a date up to 15 days in advance.
 </Text>
 
+<TouchableOpacity
+  style={styles.searchButton}
+  onPress={searchWeather}
+  disabled={loading}
+>
+  <Ionicons
+    name="search-outline"
+    size={20}
+    color="#FFFFFF"
+  />
+
+  <Text style={styles.searchButtonText}>
+    Search Weather
+  </Text>
+</TouchableOpacity>
+</View>
+{weather && !loading && (
+  <View style={styles.weatherCard}>
+
+    {/* aquí va toda la información del clima */}
 <TouchableOpacity
   style={styles.searchButton}
   onPress={async () => {
@@ -333,7 +353,7 @@ const stateLabel =
 
       </View>
 
-      {loading && (
+ )} {loading && (
         <View style={styles.statusContainer}>
           <ActivityIndicator
             size="large"
