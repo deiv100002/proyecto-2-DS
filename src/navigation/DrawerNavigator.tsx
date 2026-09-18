@@ -1,9 +1,12 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { Ionicons } from '@expo/vector-icons';
+import CaptureMemoryScreen from '../screens/CaptureMemoryScreen';
+import MemoriesScreen from '../screens/MemoriesScreen';
 
 import HomeScreen from '../screens/HomeScreen';
 import TabNavigator from './TabNavigator';
 import AboutScreen from '../screens/AboutScreen';
+import WeatherScreen from '../screens/WeatherScreen';
 import { colors } from '../theme/colors';
 
 const Drawer = createDrawerNavigator();
@@ -50,7 +53,35 @@ export default function DrawerNavigator() {
           ),
         }}
       />
+        <Drawer.Screen
+  name="CaptureMemory"
+  component={CaptureMemoryScreen}
+  options={{
+    title: 'Capture Memory',
+    drawerIcon: ({ color, size }) => (
+      <Ionicons
+        name="camera-outline"
+        size={size}
+        color={color}
+      />
+    ),
+  }}
+/>
 
+<Drawer.Screen
+  name="Memories"
+  component={MemoriesScreen}
+  options={{
+    title: 'My Memories',
+    drawerIcon: ({ color, size }) => (
+      <Ionicons
+        name="images-outline"
+        size={size}
+        color={color}
+      />
+    ),
+  }}
+/>
       <Drawer.Screen
         name="About"
         component={AboutScreen}
@@ -64,6 +95,21 @@ export default function DrawerNavigator() {
           ),
         }}
       />
+
+      <Drawer.Screen
+  name="Weather"
+  component={WeatherScreen}
+  options={{
+    title: 'Weather',
+    drawerIcon: ({ color, size }) => (
+      <Ionicons
+        name="partly-sunny-outline"
+        size={size}
+        color={color}
+      />
+    ),
+  }}
+  />
     </Drawer.Navigator>
   );
 }
